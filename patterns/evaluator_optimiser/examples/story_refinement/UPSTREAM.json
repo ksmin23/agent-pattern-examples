@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "src/main.py",
+      "upstream": "examples/agent_patterns/llm_as_a_judge.py",
+      "upstream_sha256": "cfa294e1df5cdf5f456ccb913aa0fbb4a83a10dcdb521e4affb3680d4e97490c",
+      "local_sha256": "677e385560aef2b41b6c3e1838a37a322c53dbeccd78b36a5004e6f8cdcfe937",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}

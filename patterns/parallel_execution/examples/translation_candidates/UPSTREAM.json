@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "src/main.py",
+      "upstream": "examples/agent_patterns/parallelization.py",
+      "upstream_sha256": "b17a2e276e2c2d05c3bdf0f1eac2464d3dd78f64776c0f413b5ce509fcee251a",
+      "local_sha256": "c15d6498727e6226142d5456c03b1fe5281690c1da3d68d6522aa77b6d79d128",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}

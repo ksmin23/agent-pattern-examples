@@ -1,0 +1,136 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "patterns/workflow_planning/examples/research_report/UPSTREAM_README.md",
+      "upstream": "examples/research_bot/README.md",
+      "upstream_sha256": "a2071967c10e0de53fc6384a96af210976f4d0f8253ce79f0ba9172ac494f2e1",
+      "local_sha256": "874cfca0da6ffd95a022c5c9666026cca80222dc5f3f13657b32dfff24fb87a3",
+      "modified": true,
+      "changes": "Updated local import or run instructions for the src.main layout."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/__init__.py",
+      "upstream": "examples/research_bot/__init__.py",
+      "upstream_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "local_sha256": "c1cd45cdeca81bdf4872b8baf08682a0d3393038de3ff6ce90a98f610f454c0f",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/agents/__init__.py",
+      "upstream": "examples/research_bot/agents/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "a850342357d99c2c46d4be148522cfa43aa79722b91900e92657fbdcd8120052",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/agents/planner_agent.py",
+      "upstream": "examples/research_bot/agents/planner_agent.py",
+      "upstream_sha256": "4e9e47656773850fb797018b71d775c6150a9b2629bd2cd31360ecaeb7cb5064",
+      "local_sha256": "71921fe4b616284f9e35ee6c801338adfc681844f0caf5d77d0b54b285628155",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/agents/search_agent.py",
+      "upstream": "examples/research_bot/agents/search_agent.py",
+      "upstream_sha256": "da06b3021972712fec6393d0bc01b5034d094c08de8ba6aa0d73704375bd3796",
+      "local_sha256": "123dc51e788c1b76fb89038270e8322c541ea03a2712b0dd3282ed37e376d82a",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/agents/writer_agent.py",
+      "upstream": "examples/research_bot/agents/writer_agent.py",
+      "upstream_sha256": "796f2df89984034a8149021da421d19639c6255df14f45f38d89b767781cb2ed",
+      "local_sha256": "3dff342ee2bb1f8f29cbea72d3e9df09d25ae39f13a96f7c06a23ebb0ae8da55",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/main.py",
+      "upstream": "examples/research_bot/main.py",
+      "upstream_sha256": "d41cd2737bfafe90e2f51ce87ac46e5b4fd5c1a2c55bf0d1dfdd5702dab3f905",
+      "local_sha256": "6ffd4ebe9d8d6d076475f42084022d3939c34488bf06c1ea21475e2418f4f07c",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/manager.py",
+      "upstream": "examples/research_bot/manager.py",
+      "upstream_sha256": "933b55a0b2d77625ec69c2a8c86df3c11b2217808a7831a11d2be99c4ce738fa",
+      "local_sha256": "40c19e9db0c9fbaf75d1bc86806b9fc806ea4fc754e0a616f8f6c107d41b4ba6",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation and flow comments; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/src/printer.py",
+      "upstream": "examples/research_bot/printer.py",
+      "upstream_sha256": "d7011aab74945061640fbec78c1cfbb0c77e865d6ea97c3c785e95cf591889b6",
+      "local_sha256": "95b31ef905d8ba1ad39f1baf7d385aadea25d08ed494bf61f7200c15bc596980",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/sample_outputs/product_recs.md",
+      "upstream": "examples/research_bot/sample_outputs/product_recs.md",
+      "sha256": "cfc4ab653aab9baeabf080eb68660c094a6f82891e67bf9a5f823812db0a292f"
+    },
+    {
+      "local": "patterns/workflow_planning/examples/research_report/sample_outputs/vacation.md",
+      "upstream": "examples/research_bot/sample_outputs/vacation.md",
+      "sha256": "bdb1a5f281ee4855d1070c58e9b3516f59d9a9e4b8b8a6e16103b5e693d3367d"
+    },
+    {
+      "local": "patterns/triage_handoff/examples/language_routing/src/main.py",
+      "upstream": "examples/agent_patterns/routing.py",
+      "upstream_sha256": "b9b57061f5238335743ca54137df0210fd07f146613afb3783bf2a4c5650a71b",
+      "local_sha256": "50354a1234d36aec98aba909764a7fcd04d64443769bf022c3089a16499ce4f8",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/parallel_execution/examples/translation_candidates/src/main.py",
+      "upstream": "examples/agent_patterns/parallelization.py",
+      "upstream_sha256": "b17a2e276e2c2d05c3bdf0f1eac2464d3dd78f64776c0f413b5ce509fcee251a",
+      "local_sha256": "c15d6498727e6226142d5456c03b1fe5281690c1da3d68d6522aa77b6d79d128",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/retry_or_fallback/examples/transient_error_retry/src/main.py",
+      "upstream": "examples/basic/retry.py",
+      "upstream_sha256": "195aa4c0a99170055cdcbf6bfd6cc99e5a137e2db59e02a48a87033a18613914",
+      "local_sha256": "7bb5bf4312f4d7c4300e6d74e9df89ec9cfdd611002b29132e5aac2a3a82b530",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation and flow comments; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/evaluator_optimiser/examples/story_refinement/src/main.py",
+      "upstream": "examples/agent_patterns/llm_as_a_judge.py",
+      "upstream_sha256": "cfa294e1df5cdf5f456ccb913aa0fbb4a83a10dcdb521e4affb3680d4e97490c",
+      "local_sha256": "677e385560aef2b41b6c3e1838a37a322c53dbeccd78b36a5004e6f8cdcfe937",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/sandboxed_agent/examples/workspace_inspection/src/main.py",
+      "upstream": "examples/sandbox/basic.py",
+      "upstream_sha256": "42d5af3d4f0b05ae877a25f8fc0c1aa52bd87fd83baf8b96a0f3d1c0cd3b8e2b",
+      "local_sha256": "358b3f00be853d56c06101a512067313ef5c709a2596e0fc34391d69f5dabdc8",
+      "modified": true,
+      "changes": "Updated local import and run instructions for the src.main layout and PyPI SDK installation; added tutorial-oriented module documentation and flow comments; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "patterns/sandboxed_agent/examples/workspace_inspection/src/workspace_shell.py",
+      "upstream": "examples/sandbox/misc/workspace_shell.py",
+      "upstream_sha256": "b62a80b06a42e49b66fdb1f3cafb52ebc7542eab6afd257746a6b4391ca7387c",
+      "local_sha256": "44663acc58943871a4bbf6332eddea73f08e4ea52e8baf4583a66d9f05e1cae1",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}

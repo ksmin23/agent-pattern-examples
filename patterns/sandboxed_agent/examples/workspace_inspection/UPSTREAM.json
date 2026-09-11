@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "src/main.py",
+      "upstream": "examples/sandbox/basic.py",
+      "upstream_sha256": "42d5af3d4f0b05ae877a25f8fc0c1aa52bd87fd83baf8b96a0f3d1c0cd3b8e2b",
+      "local_sha256": "358b3f00be853d56c06101a512067313ef5c709a2596e0fc34391d69f5dabdc8",
+      "modified": true,
+      "changes": "Updated local import and run instructions for the src.main layout and PyPI SDK installation; added tutorial-oriented module documentation and flow comments; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "local": "src/workspace_shell.py",
+      "upstream": "examples/sandbox/misc/workspace_shell.py",
+      "upstream_sha256": "b62a80b06a42e49b66fdb1f3cafb52ebc7542eab6afd257746a6b4391ca7387c",
+      "local_sha256": "44663acc58943871a4bbf6332eddea73f08e4ea52e8baf4583a66d9f05e1cae1",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}

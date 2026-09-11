@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "src/main.py",
+      "upstream": "examples/agent_patterns/routing.py",
+      "upstream_sha256": "b9b57061f5238335743ca54137df0210fd07f146613afb3783bf2a4c5650a71b",
+      "local_sha256": "50354a1234d36aec98aba909764a7fcd04d64443769bf022c3089a16499ce4f8",
+      "modified": true,
+      "changes": "Replaced automatic input helpers with input() and removed automatic-mode branches; interactive behavior retained; added tutorial-oriented module documentation; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.DS_Store
+.env.*
+!.env.local.example
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+uv.lock
+outputs/
+.cache/

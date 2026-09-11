@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/openai/openai-agents-python",
+  "commit": "25af629b3c877ba3d0e95189141bb636b21167a5",
+  "files": [
+    {
+      "local": "src/main.py",
+      "upstream": "examples/basic/retry.py",
+      "upstream_sha256": "195aa4c0a99170055cdcbf6bfd6cc99e5a137e2db59e02a48a87033a18613914",
+      "local_sha256": "7bb5bf4312f4d7c4300e6d74e9df89ec9cfdd611002b29132e5aac2a3a82b530",
+      "modified": true,
+      "changes": "Added tutorial-oriented module documentation and flow comments; runtime behavior is unchanged. Added copyright, MIT license, and pinned upstream source comments. Updated license notice reference to THIRD_PARTY_NOTICES.md."
+    }
+  ]
+}
