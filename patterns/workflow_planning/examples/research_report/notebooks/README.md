@@ -11,7 +11,7 @@
 
 ## Colab 실행
 
-1. `workflow_planning-ko.ipynb`를 다운로드한 뒤 Colab의 **파일 → 노트북 업로드**로 엽니다. 저장소 복제나 Drive 마운트는 필요하지 않습니다.
+1. [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/workflow_planning/examples/research_report/notebooks/workflow_planning-ko.ipynb)를 클릭합니다. 파일을 다운로드했다면 Colab의 **파일 → 노트북 업로드**로 열 수도 있습니다. 저장소 복제나 Drive 마운트는 필요하지 않습니다.
 2. 첫 설정 셀부터 실행합니다. Colab에서만 필요한 패키지를 설치하며 CPU 런타임으로 실행할 수 있습니다. 이미 다른 SDK 버전을 import했다면 런타임을 다시 시작하세요.
 3. 오프라인 실습은 기본 `RUN_API=False`로 실행합니다. 실제 API 실행에는 Colab Secrets에 기존 키를 `OPENAI_API_KEY`로 등록하고 Notebook 접근 권한을 허용한 뒤 `RUN_API=True`로 변경합니다.
 
@@ -23,4 +23,4 @@ Colab Secrets 처리는 [공식 구현](https://github.com/googlecolab/colabtool
 
 [소스 코드](../src/main.py) · [예제 안내](../README.md) · [검증 결과](../../../../../docs/notebook-validation.md)
 
-추가 실습이 필요하면 `02_exercise.ipynb`, `03_solution.ipynb`를 이 폴더에 추가하세요. 현재는 walkthrough 한 개를 제공합니다.
+현재는 `workflow_planning-ko.ipynb` 하나에 단계별 설명, 실습 과제와 독립 실행 예제를 함께 제공합니다. 추가 실습은 해당 Notebook의 **직접 바꿔보기** 섹션에 작성하세요.

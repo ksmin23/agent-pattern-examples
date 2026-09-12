@@ -6,9 +6,10 @@
 
 ## 실행
 
-ZIP을 압축 해제하고 research_report 폴더로 이동하세요. Python 3.10 이상과 uv가 필요합니다.
+Python 3.10 이상과 uv가 필요합니다. 아래 명령은 이 예제 안에 CLI용 가상환경을 만듭니다. 저장소 루트에서 시작하세요. 공통 가상환경을 사용한다면 [환경 설정](../../../../docs/setup.md)에 따라 준비한 뒤 이 예제 폴더에서 실행합니다.
 
 ```bash
+cd patterns/workflow_planning/examples/research_report
 uv venv --python 3.12
 uv pip install -r requirements.txt
 ```
@@ -50,7 +51,8 @@ Notebook 후반의 독립 실행 예제는 별도의 `run_api=False` 인수를 �
 
 ## 포함 파일
 
-- src/: 실행 진입점과 모든 Python 보조 모듈 (폴더 구조 유지)
+- [src/](src/): 실행 진입점과 모든 Python 보조 모듈 (폴더 구조 유지)
+- [notebooks/](notebooks/): 한국어 Notebook과 로컬·Colab 실행 안내
 - requirements.txt: PyPI 설치 의존성
 - THIRD_PARTY_NOTICES.md: 원본 저작권 및 MIT 고지
 - UPSTREAM.json: 포함된 upstream 파일의 출처와 해시

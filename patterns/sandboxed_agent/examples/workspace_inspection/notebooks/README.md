@@ -11,24 +11,24 @@
 
 ## Colab 실행
 
-1. `sandboxed_agent-ko.ipynb`를 다운로드한 뒤 Colab의 **파일 → 노트북 업로드**로 엽니다. 저장소 복제나 Drive 마운트는 필요하지 않습니다.
+1. [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/sandboxed_agent/examples/workspace_inspection/notebooks/sandboxed_agent-ko.ipynb)를 클릭합니다. 파일을 다운로드했다면 Colab의 **파일 → 노트북 업로드**로 열 수도 있습니다. 저장소 복제나 Drive 마운트는 필요하지 않습니다.
 2. 첫 설정 셀부터 실행합니다. Colab에서만 필요한 패키지(`openai-agents[modal]==0.22.1` 포함)를 설치하며 CPU 런타임으로 실행할 수 있습니다. 이미 다른 SDK 버전을 import했다면 런타임을 다시 시작하세요.
 3. 오프라인 실습은 기본 `RUN_API=False`로 실행합니다. 실제 API 실행에는 Colab Secrets에 기존 키를 `OPENAI_API_KEY`로 등록하고 Notebook 접근 권한을 허용한 뒤 `RUN_API=True`로 변경합니다.
 
 키는 환경 변수, 선택적 `.env.local`, Colab Secrets 순서로 사용하며 Secrets는 실제 API 실행 시에만 조회합니다. 로컬 키 파일은 Colab에 자동 전달되지 않습니다. 키 값은 출력하거나 파일에 저장하지 않습니다.
 
-모델은 `AGENT_MODEL` 환경 변수 또는 설정 셀에서 변경합니다. 후반 독립 실행 예제는 호출 셀의 `run_api=True`를 별도로 설정해야 합니다. 실제 실행에는 API·웹 검색 비용이 발생할 수 있습니다.
+샌드박스 모델은 `SANDBOX_MODEL` 환경 변수 또는 해당 설정 셀에서 변경합니다. 후반 독립 실행 예제는 호출 셀의 `run_api=True`를 별도로 설정해야 합니다. 실제 실행에는 모델 API 비용이 발생할 수 있습니다.
 
 Colab Secrets 처리는 [공식 구현](https://github.com/googlecolab/colabtools/blob/main/google/colab/userdata.py)의 조회 API와 접근 오류를 따릅니다.
 
 [소스 코드](../src/main.py) · [예제 안내](../README.md) · [검증 결과](../../../../../docs/notebook-validation.md)
 
-추가 실습이 필요하면 `02_exercise.ipynb`, `03_solution.ipynb`를 이 폴더에 추가하세요. 현재는 walkthrough 한 개를 제공합니다.
+현재는 `sandboxed_agent-ko.ipynb` 하나에 단계별 설명, 실습 과제와 독립 실행 예제를 함께 제공합니다. 추가 실습은 해당 Notebook의 **직접 바꿔보기** 섹션에 작성하세요.
 
 ## Sandbox 백엔드
 
 로컬은 Docker, Colab은 원격 Modal Sandbox를 기본으로 사용합니다. Colab에서 실제 실행하려면 Modal 계정을 준비하고 API 토큰을 발급한 뒤, Colab Secrets에 `MODAL_TOKEN_ID`, `MODAL_TOKEN_SECRET`을 등록하고 Notebook 접근을 허용하세요. `OPENAI_API_KEY`도 필요합니다. [Modal 인증 안내](https://modal.com/docs/reference/modal.config)
 
-`RUN_API=False`에서는 Modal 토큰을 조회하거나 Sandbox를 생성하지 않습니다. 실제 실행 시에는 Modal 사용료가 별도로 발생할 수 있습니다. 세션 삭제를 `finally`에서 시도하며 최대 수명은 300초입니다. 강제 종료 후에는 Modal 대시보드에서 남은 자원을 확인하세요.
+`RUN_API=False`에서는 Modal 토큰을 조회하거나 Sandbox를 생성하지 않습니다. 실제 실행 시에는 Modal 사용료가 별도로 발생할 수 있습니다. 세션 삭제를 `finally`에서 시도하며 Modal Sandbox의 제한 시간은 300초입니다. 강제 종료 후에는 Modal 대시보드에서 남은 자원을 확인하세요.
 
 `SANDBOX_BACKEND` 환경 변수로 `docker` 또는 `modal`을 선택할 수 있습니다. 로컬에서 Modal을 선택하려면 `openai-agents[modal]==0.22.1`을 설치하고 Modal 인증을 준비하세요. 샌드박스 모델은 `SANDBOX_MODEL`로 설정하며 기본값은 `gpt-5.6-sol`입니다.

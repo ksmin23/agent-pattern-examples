@@ -6,9 +6,10 @@
 
 ## 실행
 
-ZIP을 압축 해제하고 language_routing 폴더로 이동하세요. Python 3.10 이상과 uv가 필요합니다.
+Python 3.10 이상과 uv가 필요합니다. 아래 명령은 이 예제 안에 CLI용 가상환경을 만듭니다. 저장소 루트에서 시작하세요. 공통 가상환경을 사용한다면 [환경 설정](../../../../docs/setup.md)에 따라 준비한 뒤 이 예제 폴더에서 실행합니다.
 
 ```bash
+cd patterns/triage_handoff/examples/language_routing
 uv venv --python 3.12
 uv pip install -r requirements.txt
 ```
@@ -35,7 +36,7 @@ Python 코드는 원본 예제의 실행 흐름과 모델 설정을 보존합니
 
 ## Notebook과 CLI의 차이
 
-[한국어 Notebook](notebooks/triage_handoff-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 로컬 Jupyter와 Colab에서 실행하며 `RUN_API=False`가 기본값입니다. `.env.local`은 선택 사항이고, 실제 API 실행 시 환경 변수에 키가 없으면 Colab Secrets의 `OPENAI_API_KEY`를 읽습니다. [환경별 실행 안내](notebooks/README.md)를 참고하세요. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
+[한국어 Notebook](notebooks/triage_handoff-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 로컬 Jupyter와 Colab에서 실행하며 `RUN_API=False`가 기본값입니다. `.env.local`은 선택 사항이고, Colab에서 실제 API 실행 시 환경 변수에 키가 없으면 Secrets의 `OPENAI_API_KEY`를 읽습니다. [환경별 실행 안내](notebooks/README.md)를 참고하세요. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
 
 Notebook은 `AGENT_MODEL`로 모델을 지정합니다(기본값 `gpt-5.6-luna`). CLI의 모델 설정은 `src/`에 정의되어 있으며 이 환경 변수를 사용하지 않습니다.
 
@@ -49,7 +50,8 @@ Notebook 후반의 독립 실행 예제는 별도의 `run_api=False` 인수를 �
 
 ## 포함 파일
 
-- src/: 실행 진입점과 모든 Python 보조 모듈 (폴더 구조 유지)
+- [src/](src/): 실행 진입점과 모든 Python 보조 모듈 (폴더 구조 유지)
+- [notebooks/](notebooks/): 한국어 Notebook과 로컬·Colab 실행 안내
 - requirements.txt: PyPI 설치 의존성
 - THIRD_PARTY_NOTICES.md: 원본 저작권 및 MIT 고지
 - UPSTREAM.json: 포함된 upstream 파일의 출처와 해시
