@@ -1,6 +1,6 @@
 # Workflow planning: research_report
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/workflow_planning/examples/research_report/notebooks/workflow_planning-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/workflow_planning/examples/research_report/notebooks/workflow_planning-ko.ipynb)
 
 리서치 질문을 검색 계획으로 나누고, 수집한 정보를 하나의 보고서로 종합합니다.
 

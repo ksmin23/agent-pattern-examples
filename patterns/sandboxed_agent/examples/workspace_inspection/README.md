@@ -1,6 +1,6 @@
 # Sandboxed agent: workspace_inspection
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/sandboxed_agent/examples/workspace_inspection/notebooks/sandboxed_agent-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/sandboxed_agent/examples/workspace_inspection/notebooks/sandboxed_agent-ko.ipynb)
 
 격리된 작업 공간에서 shell 도구로 파일을 읽고, 실행 후 자원을 정리합니다. Notebook은 로컬 Docker와 Colab의 원격 Modal Sandbox를 지원합니다.
 

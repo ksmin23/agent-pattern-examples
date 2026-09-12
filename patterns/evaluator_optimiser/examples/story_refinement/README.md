@@ -1,6 +1,6 @@
 # Evaluator-optimiser: story_refinement
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/evaluator_optimiser/examples/story_refinement/notebooks/evaluator_optimiser-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/evaluator_optimiser/examples/story_refinement/notebooks/evaluator_optimiser-ko.ipynb)
 
 이야기 개요를 생성하고, 평가자의 구체적인 피드백을 반영해 다시 작성합니다.
 

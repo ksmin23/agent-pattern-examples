@@ -1,6 +1,6 @@
 # Triage hand-off: language_routing
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/triage_handoff/examples/language_routing/notebooks/triage_handoff-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/triage_handoff/examples/language_routing/notebooks/triage_handoff-ko.ipynb)
 
 요청의 언어에 따라 전문 에이전트에게 응답의 제어권을 넘깁니다.
 

@@ -1,6 +1,6 @@
 # Parallel execution: translation_candidates
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/parallel_execution/examples/translation_candidates/notebooks/parallel_execution-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/parallel_execution/examples/translation_candidates/notebooks/parallel_execution-ko.ipynb)
 
 번역 후보 세 개를 병렬로 생성한 뒤 선택 에이전트가 최종 결과를 고릅니다.
 

@@ -1,6 +1,6 @@
 # Retry or fallback: transient_error_retry
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/retry_or_fallback/examples/transient_error_retry/notebooks/retry_or_fallback-ko.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/retry_or_fallback/examples/transient_error_retry/notebooks/retry_or_fallback-ko.ipynb)
 
 재시도 정책과 백오프를 구성하고, 가짜 HTTP 응답으로 오류 경로를 확인합니다.
 
