@@ -99,7 +99,7 @@ Notebook에서 소스를 import한다면 작업 디렉터리와 import 경로를
 ## 이름·경로 변경 시 갱신할 항목
 
 1. 실행 진입점과 내부 import를 새 구조에 맞춥니다.
-2. 루트·패턴·예제 README의 코드 링크와 실행 명령을 수정합니다.
+2. 루트·패턴·예제·notebooks README의 코드 링크와 실행 명령을 수정합니다. README와 Notebook의 Colab 링크도 대상 브랜치와 파일 경로에 맞춥니다. 개발 브랜치를 병합하면 기본 브랜치의 링크로 갱신합니다.
 3. Notebook의 소스 참조와 데이터 상대 경로를 수정합니다.
 4. [UPSTREAM.json](../UPSTREAM.json)의 `local` 경로를 갱신합니다. 원본 저장소, 커밋, 파일 경로는 유지합니다.
 5. 내용까지 변경했다면 `modified: true`, `upstream_sha256`, `local_sha256`, `changes`를 기록합니다. 이름·위치만 변경했다면 기존 내용 해시를 유지합니다.

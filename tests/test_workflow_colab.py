@@ -18,7 +18,10 @@ def code_cells():
 
 
 def loaders():
-    for source in code_cells():
+    sources = []
+    for path in NOTEBOOK.parents[4].rglob("*.ipynb"):
+        sources.extend("".join(c["source"]) for c in json.loads(path.read_text())["cells"] if c["cell_type"] == "code")
+    for source in sources:
         nodes = [n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef) and n.name == 'load_environment']
         if nodes:
             namespace = {'os': os, 'find_dotenv': Mock(return_value=''), 'load_dotenv': load_dotenv}
@@ -54,7 +57,7 @@ class WorkflowEnvironmentTests(unittest.TestCase):
             with patch.dict('sys.modules', self.modules):
                 ns['load_environment'](run_api=True)
             self.assertEqual(os.environ['OPENAI_API_KEY'], 'test-only-secret')
-        self.assertEqual(self.userdata.get.call_count, 2)
+        self.assertEqual(self.userdata.get.call_count, 12)
 
     def test_local_env_file_and_existing_environment_precedence(self):
         with tempfile.TemporaryDirectory() as tmp:

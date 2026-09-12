@@ -22,16 +22,19 @@
 - 패턴 README: 개념, 예제 목록, 학습 목표, Notebook 제공 여부.
 - 예제 README: 시나리오, 실행 명령, 입력과 출력, Notebook 목록, 출처 및 구현 범위.
 - 새 예제를 추가하면 패턴 README의 목록도 갱신합니다.
+- Colab 링크는 패턴 README의 예제 목록과 예제 README·Notebook 상단에 추가합니다. GitHub에 게시된 브랜치와 Notebook 경로를 사용하고, 병합이나 파일 이동 시 링크도 갱신합니다.
 
 ## Notebook
 
-필요한 순서대로 `01_walkthrough.ipynb`, `02_exercise.ipynb`, `03_solution.ipynb`를 추가하세요. 번호는 각 예제 안에서만 관리합니다.
+Notebook은 `notebooks/<pattern>-ko.ipynb` 형식으로 추가합니다. 현재는 각 예제의 Notebook 하나에 설명, 실습 과제와 독립 실행 예제를 함께 제공합니다.
 
 내용은 학습 목표 → 환경 확인 → 입력·모델 설정 → 도구 정의 → Agent 정의 → 워크플로 실행 → 결과 해석 → 실습 과제 → 출처 순서를 권장합니다. 설명용 Notebook은 핵심 Agent 코드를 셀 안에서 직접 정의하여 수정하고 실험할 수 있게 작성합니다.
 
-- Notebook은 `notebooks/`를 작업 디렉터리로 가정합니다. 첫 부분에 이를 명시하고 필요한 파일은 예제의 `data/` 등 상대 경로로 참조합니다.
-- 같은 예제의 `src.*`를 import해야 한다면 상위 예제 디렉터리를 import 경로에 추가하는 셀을 명시합니다. 예제마다 같은 패키지명이 있으므로 다른 예제를 실행할 때는 새 커널을 사용합니다.
-- 의존성 설치는 공통 환경 설정에서 수행합니다. Notebook 실행 중 자동 설치하지 않습니다.
+- 로컬에서는 Notebook 폴더와 저장소 루트에서 실행할 수 있게 작성합니다. Colab에서는 저장소 checkout이나 Drive 연결 없이 실행할 수 있도록 핵심 코드를 셀 안에 둡니다. 외부 데이터가 필요하면 준비 방법과 경로를 명시합니다.
+- 같은 예제의 `src.*`를 import해야 한다면 로컬 import 경로와 Colab에서의 소스 준비 방법을 명시합니다. 예제마다 같은 패키지명이 있으므로 다른 예제를 실행할 때는 새 커널을 사용합니다.
+- 로컬 의존성은 공통 환경 설정에서 설치합니다. Colab에서는 첫 설정 셀에서 환경을 감지하고 필요한 패키지만 설치합니다. 현재 SDK 버전은 `0.22.1`이며 Sandbox는 Colab에서 `modal` extra를 사용합니다.
+- 기본 `RUN_API=False`와 독립 실행 예제의 `run_api=False`에서는 키나 `.env.local` 없이 실행할 수 있어야 합니다. 실제 호출 시 기존 환경 변수 → 선택적 `.env.local` → Colab Secrets 순으로 키를 확인합니다.
+- Sandbox Notebook은 로컬 Docker, Colab Modal을 기본으로 사용합니다. 백엔드 선택, 인증과 비용 안내는 [환경 설정](setup.md)에 맞춥니다.
 - 모델 호출 셀과 비용 발생 여부를 명확히 표시합니다. 키 값은 입력·출력·메타데이터에 저장하지 않습니다.
 - Restart & Run All로 실행 순서를 확인한 뒤, 커밋 전에 셀 출력과 실행 번호를 지웁니다. 실제 실행하지 못했다면 해당 상태를 기록합니다.
 - 교육용으로 재구성한 Notebook에는 원본 링크와 변경 내용을 적습니다.
@@ -48,4 +51,4 @@
 
 수정한 원본 파일은 `UPSTREAM.json`에서 `modified: true`로 표시하고, `upstream_sha256`, `local_sha256`, `changes`를 기록합니다. 수정하지 않은 파일은 기존 `sha256`을 유지합니다. 예제 README에도 원본 커밋과 변경 내용을 기록합니다. 원본 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)의 저작권 고지를 보존하세요.
 
-변경 후 README의 상대 링크, 실행 명령의 작업 위치, 로컬 import 경로를 확인합니다. Notebook을 추가할 때는 파일 형식과 셀 실행 순서도 확인합니다.
+변경 후 README의 상대 링크, Colab 링크, 실행 명령의 작업 위치, 로컬 import 경로를 확인합니다. Notebook은 `python scripts/check_notebooks.py`로 오프라인 검증하고 관련 테스트를 실행합니다. 로컬 실행, Colab 모의 테스트, 실제 Colab·API 실행 여부는 구분하여 [검증 기록](notebook-validation.md)에 남깁니다.

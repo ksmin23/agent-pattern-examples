@@ -1,6 +1,8 @@
 # Sandboxed agent: workspace_inspection
 
-Docker 작업 공간에서 shell 도구로 파일을 읽고, 실행 후 자원을 정리합니다.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/sandboxed_agent/examples/workspace_inspection/notebooks/sandboxed_agent-ko.ipynb)
+
+격리된 작업 공간에서 shell 도구로 파일을 읽고, 실행 후 자원을 정리합니다. Notebook은 로컬 Docker와 Colab의 원격 Modal Sandbox를 지원합니다.
 
 ## 실행
 
@@ -35,16 +37,16 @@ Docker daemon이 실행 중이어야 합니다. 샌드박스 작업에 사용하
 
 ## Notebook과 CLI의 차이
 
-[한국어 Notebook](notebooks/sandboxed_agent-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 `.env.local`을 탐색해 읽고 `RUN_API=False`를 기본값으로 사용합니다. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
+[한국어 Notebook](notebooks/sandboxed_agent-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 로컬 Jupyter와 Colab에서 실행하며 `RUN_API=False`가 기본값입니다. `.env.local`은 선택 사항이고, 실제 API 실행 시 환경 변수에 키가 없으면 Colab Secrets의 `OPENAI_API_KEY`를 읽습니다. [환경별 실행 안내](notebooks/README.md)를 참고하세요. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
 
 Notebook은 `SANDBOX_MODEL`로 샌드박스 모델을 지정합니다(기본값 `gpt-5.6-sol`). CLI에서는 `--model`을 사용합니다.
 
 | 항목 | CLI (`src/main.py`) | Notebook |
 |---|---|---|
-| 백엔드·입력 | `--backend`로 Docker 또는 Modal을 선택하고 `--question`, `--model`로 입력을 지정합니다. | Docker 경로만 사용하며 셀의 `question`과 `SANDBOX_MODEL`로 설정합니다. |
+| 백엔드·입력 | `--backend`로 Docker 또는 Modal을 선택하고 `--question`, `--model`로 입력을 지정합니다. | 로컬 Docker 또는 Colab의 원격 Modal을 사용하며, `SANDBOX_BACKEND`로 선택할 수 있습니다. 셀의 `question`과 `SANDBOX_MODEL`로 입력을 설정합니다. |
 | 실행·출력 | `Runner.run_streamed()`로 텍스트와 도구 이벤트를 스트리밍합니다. | `await Runner.run()`이 완료된 뒤 응답을 표시하고 도구 호출 여부를 확인합니다. |
 | 코드 구성 | shell 도구 보조 클래스를 `src/workspace_shell.py`에서 가져옵니다. | 같은 역할의 클래스를 코드 셀에 직접 정의합니다. |
-| 자원 사용 | CLI 실행 시 샌드박스를 생성합니다. | `RUN_API=False`에서는 Docker 작업과 API 호출을 생략합니다. 실제 실행 후에는 CLI와 마찬가지로 세션을 삭제합니다. |
+| 자원 사용 | CLI 실행 시 샌드박스를 생성합니다. | `RUN_API=False`에서는 Sandbox 생성과 API 호출을 생략합니다. 실제 실행 후에는 세션 삭제를 시도합니다. Colab의 Modal 실행에는 별도 토큰과 사용료가 필요합니다. |
 
 Notebook 후반의 독립 실행 예제는 별도의 `run_api=False` 인수를 사용합니다. 앞부분의 `RUN_API`를 변경해도 이 인수는 바뀌지 않습니다.
 

@@ -33,10 +33,8 @@ agent-pattern-examples/
 │   ├── code-organization.md
 │   └── assets
 │       └── agent-patterns
-├── scripts/
-│   └── check_notebooks.py
-├── tests/
-│   └── test_check_notebooks.py
+├── scripts/       # Notebook 검증 등 개발 도구
+├── tests/         # 검증 도구 및 Colab·Sandbox 지원 테스트
 └── patterns/
     ├── workflow_planning/examples/research_report/
     ├── triage_handoff/examples/language_routing/
@@ -67,9 +65,13 @@ agent-pattern-examples/
 
 각 예제의 `notebooks/<pattern>-ko.ipynb`에서 실행할 수 있습니다. 앞부분 실습은 기본적으로 API 호출을 생략하며, 실행할 때 설정 셀의 `RUN_API=True`로 변경합니다. 후반 독립 실행 예제는 호출 셀의 별도 인수 `run_api=True`로 활성화합니다. `RUN_API`만 변경하면 이 인수는 바뀌지 않습니다. [uv 환경 설정](docs/setup.md) · [Notebook 검증 결과](docs/notebook-validation.md)
 
+6개 Notebook 모두 로컬 Jupyter와 Colab에서 실행하도록 구성되어 있습니다. Colab은 패턴 README의 **Colab에서 열기** 링크 또는 예제 README·Notebook 상단의 **Open in Colab** 배지로 시작합니다. 첫 설정 셀이 Colab에서만 필요한 패키지를 설치하므로 저장소 checkout이나 Drive 연결은 필요하지 않습니다. 개발 브랜치 링크는 해당 변경 사항을 GitHub에 푸시한 뒤 사용할 수 있습니다.
+
+기본 오프라인 실행에는 API 키나 `.env.local`이 필요하지 않습니다. Colab에서 실제 API를 호출하려면 Secrets에 `OPENAI_API_KEY`를 등록하고 Notebook 접근을 허용하세요. 기존 환경 변수에 키가 있으면 우선 사용하며, 로컬 `.env.local`은 Colab에 자동 전달되지 않습니다. 자세한 절차는 [Colab 실행 안내](docs/setup.md#colab-실행)를 참고하세요.
+
 ## 공통 설치
 
-Notebook 환경과 Docker 준비를 포함한 안내는 [환경 설정](docs/setup.md)을 참고하세요.
+아래 명령은 로컬 CLI용 공통 의존성을 설치합니다. 로컬 Notebook에는 `requirements-notebooks.txt`를 사용하세요. Jupyter 설정과 Docker·Modal 준비를 포함한 안내는 [환경 설정](docs/setup.md)을 참고하세요.
 
 Python 3.10 이상과 pip가 필요합니다. 저장소 루트에서:
 
@@ -79,7 +81,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-실행할 때는 `OPENAI_API_KEY` 환경 변수를 설정해야 합니다. API 호출에는 비용이 발생할 수 있습니다. CLI 소스는 `.env`를 자동으로 읽지 않으며, Notebook은 `find_dotenv()`로 현재 작업 디렉터리 또는 상위 디렉터리의 `.env.local`을 찾습니다. API 키를 소스에 넣거나 커밋하지 마세요.
+실제 API를 호출할 때는 `OPENAI_API_KEY`가 필요하며 비용이 발생할 수 있습니다. CLI 소스는 환경 파일을 자동으로 읽지 않으므로 환경 변수를 미리 설정해야 합니다. 로컬 Notebook은 `find_dotenv()`로 현재 작업 디렉터리 또는 상위 디렉터리의 선택적 `.env.local`을 찾으며, 기존 환경 변수의 값을 우선합니다. API 키를 소스에 넣거나 커밋하지 마세요.
 
 각 폴더의 README에 실행 명령이 있습니다. 개별 예제 폴더로 이동한 뒤 `python -m src.main`으로 실행합니다. Agents SDK는 GitHub checkout 대신 PyPI의 `openai-agents[docker]==0.22.1` 패키지를 사용합니다.
 
@@ -89,7 +91,7 @@ python -m pip install -r requirements.txt
 - Parallel execution: 동일 작업의 후보를 병렬 생성하고 선택합니다. 다른 검색 작업을 병렬 처리하는 흐름은 workflow_planning에도 있습니다.
 - Retry or fallback: 공식 retry 예제를 포함합니다. 백업 모델 전환 코드는 포함하지 않습니다.
 - Evaluator-optimiser: 평가 피드백을 반영해 반복합니다. 평가 모델의 성능 우위나 최종 품질을 보장하지 않습니다.
-- Sandboxed agent: Docker 실행을 기본으로 안내합니다. 상태 보존·재개는 이 기본 예제의 범위 밖입니다. Modal 실행은 별도 의존성과 계정 설정이 필요합니다.
+- Sandboxed agent: Notebook의 기본 백엔드는 로컬 Docker·Colab Modal이며, `SANDBOX_BACKEND`로 변경할 수 있습니다. 실제 Modal 실행에는 계정과 인증이 필요하고 모델 API와 별도 사용료가 발생할 수 있습니다. Colab에서는 `MODAL_TOKEN_ID`·`MODAL_TOKEN_SECRET`을 Secrets에 등록할 수 있습니다. 설치·인증은 [Sandbox 설정](docs/setup.md#sandbox-예제)을 참고하세요. 상태 보존·재개는 이 기본 예제의 범위 밖입니다.
 - CLI 소스는 원본의 모델명과 기본값을 유지했습니다. Notebook은 학습용으로 모델·반복 횟수·검색 규모 등을 조정했으며, 각 예제 README의 “Notebook과 CLI의 차이”에 설명했습니다. 사용 환경에서 접근 가능한 모델인지 실행 전에 확인하세요.
 
 ## 소스 코드 출처
@@ -123,4 +125,6 @@ python -m pip install -r requirements.txt
 
 수정하지 않은 파일의 원본 해시 일치, 수정 파일의 로컬 해시, Python 구문, 로컬 예제 import 경로를 정적으로 확인했습니다. CLI 소스의 실제 실행은 별도 검증하지 않았습니다. Notebook 설치·실행 검증은 [검증 결과](docs/notebook-validation.md)를 참고하세요.
 
-Notebook 환경을 설치한 뒤 저장소 루트에서 `python scripts/check_notebooks.py`로 전체 오프라인 검증을 실행합니다. `--example language_routing`으로 예제를 선택할 수 있으며, `--live`는 앞부분 실습의 실제 API 호출을 활성화합니다. 결과는 `.cache/notebook-validation.json`에 저장됩니다. 검증 도구의 통합 테스트는 `python -m unittest discover -s tests -v`로 실행합니다.
+Notebook 환경을 설치한 뒤 저장소 루트에서 `python scripts/check_notebooks.py`로 전체 오프라인 검증을 실행합니다. `--example language_routing`으로 예제를 선택할 수 있으며, `--live`는 앞부분 실습의 실제 API 호출을 활성화합니다. 전체 실제 실행에는 선택한 Sandbox 백엔드도 필요합니다. 결과는 `.cache/notebook-validation.json`에 저장됩니다.
+
+검증 도구의 통합 테스트와 Colab·Sandbox 지원 테스트는 `python -m unittest discover -s tests -v`로 실행합니다. Modal 어댑터 테스트는 선택적 Modal 의존성이 없으면 건너뜁니다. 설치 방법과 검증 범위는 [검증 기록](docs/notebook-validation.md#다시-실행)에 있습니다. 로컬 실행과 Colab 모의 테스트는 통과했으며, 실제 Colab 런타임 및 Modal 원격 실행은 아직 확인하지 않았습니다.

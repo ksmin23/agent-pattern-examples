@@ -1,5 +1,7 @@
 # Retry or fallback: transient_error_retry
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/feat/workflow-planning-colab/patterns/retry_or_fallback/examples/transient_error_retry/notebooks/retry_or_fallback-ko.ipynb)
+
 재시도 정책과 백오프를 구성하고, 가짜 HTTP 응답으로 오류 경로를 확인합니다.
 
 ## 실행
@@ -33,7 +35,7 @@ Python 코드는 원본 예제의 실행 흐름과 모델 설정을 보존합니
 
 ## Notebook과 CLI의 차이
 
-[한국어 Notebook](notebooks/retry_or_fallback-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 `.env.local`을 탐색해 읽고 `RUN_API=False`를 기본값으로 사용합니다. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
+[한국어 Notebook](notebooks/retry_or_fallback-ko.ipynb)은 같은 패턴을 셀 단위로 실습하도록 구성했습니다. Notebook은 로컬 Jupyter와 Colab에서 실행하며 `RUN_API=False`가 기본값입니다. `.env.local`은 선택 사항이고, 실제 API 실행 시 환경 변수에 키가 없으면 Colab Secrets의 `OPENAI_API_KEY`를 읽습니다. [환경별 실행 안내](notebooks/README.md)를 참고하세요. CLI는 환경 변수를 직접 준비하고 실행하면 실제 API를 호출합니다.
 
 Notebook은 `AGENT_MODEL`로 모델을 지정합니다(기본값 `gpt-5.6-luna`). CLI의 모델 설정은 `src/`에 정의되어 있으며 이 환경 변수를 사용하지 않습니다.
 
