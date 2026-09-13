@@ -17,6 +17,21 @@ OpenAI Agents SDK로 자주 쓰이는 에이전트 아키텍처 패턴을 구현
 | [Evaluator-optimiser](patterns/evaluator_optimiser/) | <img src="docs/assets/agent-patterns/evaluator_optimiser.png" alt="Evaluator-optimiser 패턴 다이어그램" width="160"> | 이야기 개요 평가 및 개선 | 초안 생성 → 평가 → 피드백 반영 → 반복 | [main.py](patterns/evaluator_optimiser/examples/story_refinement/src/main.py) |
 | [Sandboxed agent](patterns/sandboxed_agent/) | <img src="docs/assets/agent-patterns/sandboxed_agent.png" alt="Sandboxed agent 패턴 다이어그램" width="160"> | 격리된 작업 공간의 파일 조사 | 작업 파일 준비 → 샌드박스 생성 → shell로 조사 → 응답 | [main.py](patterns/sandboxed_agent/examples/workspace_inspection/src/main.py) |
 
+## 프로그래밍 개념으로 이해하기
+
+아래 표는 정확한 1:1 대응이 아니라, 익숙한 프로그래밍 개념으로 Agent 패턴을 이해하기 위한 비유입니다.
+
+| Agent Pattern | 관련 프로그래밍 개념 | 핵심 의미 |
+|---|---|---|
+| **Workflow planning** | 동적 작업 분해와 실행 순서 조율 — Task decomposition & orchestration | 목표를 작업으로 나누고, 계획에 따라 순차·병렬로 실행한 뒤 결과를 종합 |
+| **Triage hand-off** | 조건 분기와 제어권 이전 — Conditional branching & control transfer | `if–else`나 `switch`처럼 담당 Agent를 선택하고 후속 실행을 위임 |
+| **Parallel execution** | 병렬 분기와 합류 — Fork–join | 독립적인 작업을 동시에 실행하고 결과를 모아 후속 처리 |
+| **Retry or fallback** | 예외 처리와 재시도·대체 경로 — Exception handling, retry & fallback | 오류를 판단해 제한적으로 재시도하거나 다른 모델·처리 경로로 전환 |
+| **Evaluator-optimiser** | 평가 기반 피드백 반복 — Evaluate–refine loop | `while`이나 `repeat–until`처럼 평가·개선을 반복하며, 품질 기준 충족 또는 반복 상한에서 종료 |
+| **Sandboxed agent** | 격리된 실행 환경 — Isolated execution environment | 프로세스·컨테이너·VM 등의 격리를 통해 코드의 접근 자원과 실행 범위를 제한 |
+
+앞의 5개는 주로 **실행 흐름**, Sandboxed agent는 **실행 환경과 격리**에 관한 패턴입니다. 현재 저장소의 Retry or fallback 예제는 재시도만 구현하며, 대체 모델 전환은 포함하지 않습니다.
+
 ## 디렉터리 구조
 
 ```text
