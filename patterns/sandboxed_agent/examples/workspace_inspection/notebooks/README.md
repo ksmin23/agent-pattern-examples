@@ -27,6 +27,10 @@ Colab Secrets 처리는 [공식 구현](https://github.com/googlecolab/colabtool
 
 ## Sandbox 백엔드
 
+Sandbox 백엔드는 Agent가 사용할 격리된 작업 공간을 만들고, 그 안에서 명령을 실행하는 역할을 합니다. **Modal**은 클라우드에서 코드를 실행할 수 있는 서비스이며, **Modal Sandbox**는 필요할 때 생성하여 파일을 다루거나 shell 명령을 실행할 수 있는 격리된 컨테이너입니다. 자세한 개념은 [Modal Sandbox 소개](https://modal.com/docs/guide/sandboxes)를 참고하세요.
+
+이 예제에서 Colab은 Notebook과 Agent 실행 흐름을 담당하고, Modal은 Agent의 shell 도구가 파일을 조사할 원격 작업 공간을 제공합니다. Notebook이 Modal에 작업 공간을 생성하고 조사할 파일을 준비한 뒤, 도구 실행 결과를 받아 응답에 사용합니다. 따라서 Colab 안에 Docker daemon을 직접 준비하지 않고도 Sandbox 실습을 진행할 수 있습니다. 모델 응답 생성에는 OpenAI API를 사용하므로, Modal 인증과 OpenAI API 인증을 각각 준비합니다.
+
 로컬은 Docker, Colab은 원격 Modal Sandbox를 기본으로 사용합니다. Colab에서 실제 실행하려면 Modal 계정을 준비하고 API 토큰을 발급한 뒤, Colab Secrets에 `MODAL_TOKEN_ID`, `MODAL_TOKEN_SECRET`을 등록하고 Notebook 접근을 허용하세요. `OPENAI_API_KEY`도 필요합니다. [Modal 인증 안내](https://modal.com/docs/reference/modal.config)
 
 `RUN_API=False`에서는 Modal 토큰을 조회하거나 Sandbox를 생성하지 않습니다. 실제 실행 시에는 Modal 사용료가 별도로 발생할 수 있습니다. 세션 삭제를 `finally`에서 시도하며 Modal Sandbox의 제한 시간은 300초입니다. 강제 종료 후에는 Modal 대시보드에서 남은 자원을 확인하세요.
