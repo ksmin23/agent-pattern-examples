@@ -8,14 +8,14 @@ OpenAI Agents SDK로 자주 쓰이는 에이전트 아키텍처 패턴을 구현
 
 ## 패턴 목록
 
-| 패턴 | 이미지 | 구현 예제 | 핵심 흐름 | 코드 |
+| 패턴 | 이미지 | 구현 예제 | 핵심 흐름 | Colab |
 |---|---|---|---|---|
-| [Workflow planning](patterns/workflow_planning/) | <img src="docs/assets/agent-patterns/workflow_planning.png" alt="Workflow planning 패턴 다이어그램" width="160"> | 리서치 보고서 작성 | 검색 계획 수립 → 병렬 검색 → 보고서 작성 | [manager.py](patterns/workflow_planning/examples/research_report/src/manager.py) |
-| [Triage hand-off](patterns/triage_handoff/) | <img src="docs/assets/agent-patterns/triage_handoff.png" alt="Triage hand-off 패턴 다이어그램" width="160"> | 언어별 전문 에이전트 연결 | 입력 언어 판단 → 전문 에이전트에 제어권 위임 | [main.py](patterns/triage_handoff/examples/language_routing/src/main.py) |
-| [Parallel execution](patterns/parallel_execution/) | <img src="docs/assets/agent-patterns/parallel_execution.png" alt="Parallel execution 패턴 다이어그램" width="160"> | 번역 후보 생성 및 선택 | 번역 후보 3개 동시 생성 → 최적 후보 선택 | [main.py](patterns/parallel_execution/examples/translation_candidates/src/main.py) |
-| [Retry or fallback](patterns/retry_or_fallback/) | <img src="docs/assets/agent-patterns/retry_or_fallback.png" alt="Retry or fallback 패턴 다이어그램" width="160"> | 일시적 오류 재시도 | 오류 판단 → 백오프 → 재시도. 백업 모델 전환은 미포함 | [main.py](patterns/retry_or_fallback/examples/transient_error_retry/src/main.py) |
-| [Evaluator-optimiser](patterns/evaluator_optimiser/) | <img src="docs/assets/agent-patterns/evaluator_optimiser.png" alt="Evaluator-optimiser 패턴 다이어그램" width="160"> | 이야기 개요 평가 및 개선 | 초안 생성 → 평가 → 피드백 반영 → 반복 | [main.py](patterns/evaluator_optimiser/examples/story_refinement/src/main.py) |
-| [Sandboxed agent](patterns/sandboxed_agent/) | <img src="docs/assets/agent-patterns/sandboxed_agent.png" alt="Sandboxed agent 패턴 다이어그램" width="160"> | 격리된 작업 공간의 파일 조사 | 작업 파일 준비 → 샌드박스 생성 → shell로 조사 → 응답 | [main.py](patterns/sandboxed_agent/examples/workspace_inspection/src/main.py) |
+| [Workflow planning](patterns/workflow_planning/) | <img src="docs/assets/agent-patterns/workflow_planning.png" alt="Workflow planning 패턴 다이어그램" width="160"> | 리서치 보고서 작성 | 검색 계획 수립 → 병렬 검색 → 보고서 작성 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/workflow_planning/examples/research_report/notebooks/workflow_planning-ko.ipynb) |
+| [Triage hand-off](patterns/triage_handoff/) | <img src="docs/assets/agent-patterns/triage_handoff.png" alt="Triage hand-off 패턴 다이어그램" width="160"> | 언어별 전문 에이전트 연결 | 입력 언어 판단 → 전문 에이전트에 제어권 위임 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/triage_handoff/examples/language_routing/notebooks/triage_handoff-ko.ipynb) |
+| [Parallel execution](patterns/parallel_execution/) | <img src="docs/assets/agent-patterns/parallel_execution.png" alt="Parallel execution 패턴 다이어그램" width="160"> | 번역 후보 생성 및 선택 | 번역 후보 3개 동시 생성 → 최적 후보 선택 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/parallel_execution/examples/translation_candidates/notebooks/parallel_execution-ko.ipynb) |
+| [Retry or fallback](patterns/retry_or_fallback/) | <img src="docs/assets/agent-patterns/retry_or_fallback.png" alt="Retry or fallback 패턴 다이어그램" width="160"> | 일시적 오류 재시도 | 오류 판단 → 백오프 → 재시도. 백업 모델 전환은 미포함 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/retry_or_fallback/examples/transient_error_retry/notebooks/retry_or_fallback-ko.ipynb) |
+| [Evaluator-optimiser](patterns/evaluator_optimiser/) | <img src="docs/assets/agent-patterns/evaluator_optimiser.png" alt="Evaluator-optimiser 패턴 다이어그램" width="160"> | 이야기 개요 평가 및 개선 | 초안 생성 → 평가 → 피드백 반영 → 반복 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/evaluator_optimiser/examples/story_refinement/notebooks/evaluator_optimiser-ko.ipynb) |
+| [Sandboxed agent](patterns/sandboxed_agent/) | <img src="docs/assets/agent-patterns/sandboxed_agent.png" alt="Sandboxed agent 패턴 다이어그램" width="160"> | 격리된 작업 공간의 파일 조사 | 작업 파일 준비 → 샌드박스 생성 → shell로 조사 → 응답 | [Colab에서 열기](https://colab.research.google.com/github/ksmin23/agent-pattern-examples/blob/main/patterns/sandboxed_agent/examples/workspace_inspection/notebooks/sandboxed_agent-ko.ipynb) |
 
 ## 프로그래밍 개념으로 이해하기
 
